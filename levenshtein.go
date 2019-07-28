@@ -89,33 +89,3 @@ func CalculateDistance(source string, target string) (int) {
 	distance := GetDistance(mtx, source, target)
 	return distance
 }
-
-
-func GetLikelySpelling(word string, dictionary []string) (string) {
-	var mostLikelySpelling string
-	var distance int
-	var mtx  [][]int
-
-	distance = len(word)
-
-	for _, dictWord := range dictionary {
-		levMatrix := GetLevMatrix(word, dictWord)
-
-		distanceToCurrentWord := GetDistance(levMatrix, word, dictWord)
-		if distanceToCurrentWord < distance {
-			distance = distanceToCurrentWord
-			mostLikelySpelling = dictWord
-			mtx = levMatrix
-		}
-		
-	} 
-	if len(mostLikelySpelling) > 0 {
-		printLevMatrix(word, mostLikelySpelling, mtx) 
-		fmt.Println(mostLikelySpelling)
-	} else {
-		mostLikelySpelling = word
-	}
-
-	return mostLikelySpelling
-}
-
