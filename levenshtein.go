@@ -38,7 +38,7 @@ func printLevMatrix(source string, target string, a [][]int) {
 }
 
 
-func getLevMatrix(source, target string) ([][]int){
+func GetLevMatrix(source, target string) ([][]int){
 	// Levenshtein distance
 	// https://en.wikipedia.org/wiki/Levenshtein_distance#Iterative_with_full_matrix
 	a := make([][]int, len(source) + 1)
@@ -78,7 +78,7 @@ func getLevMatrix(source, target string) ([][]int){
 }
 
 
-func getDistance(levMatrix [][]int, source string, target string) (int) {
+func GetDistance(levMatrix [][]int, source string, target string) (int) {
 	distance := levMatrix[len(source)][len(target)]
 	return distance
 }
