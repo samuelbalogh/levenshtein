@@ -85,8 +85,8 @@ func GetDistance(levMatrix [][]int, source string, target string) (int) {
 
 
 func CalculateDistance(source string, target string) (int) {
-	mtx := getLevMatrix(source, target)
-	distance := getDistance(mtx, source, target)
+	mtx := GetLevMatrix(source, target)
+	distance := GetDistance(mtx, source, target)
 	return distance
 }
 
@@ -99,9 +99,9 @@ func GetLikelySpelling(word string, dictionary []string) (string) {
 	distance = len(word)
 
 	for _, dictWord := range dictionary {
-		levMatrix := getLevMatrix(word, dictWord)
+		levMatrix := GetLevMatrix(word, dictWord)
 
-		distanceToCurrentWord := getDistance(levMatrix, word, dictWord)
+		distanceToCurrentWord := GetDistance(levMatrix, word, dictWord)
 		if distanceToCurrentWord < distance {
 			distance = distanceToCurrentWord
 			mostLikelySpelling = dictWord
