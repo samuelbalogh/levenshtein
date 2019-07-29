@@ -4,14 +4,11 @@ import (
 	"fmt"
 )
 
-
-
 func check(e error) {
     if e != nil {
         panic(e)
     }
 }
-
 
 func Min(array [3]int) (int) {
     var min int = array[0]
@@ -22,7 +19,6 @@ func Min(array [3]int) (int) {
     }
     return min
 }
-
 
 func printLevMatrix(source string, target string, a [][]int) {
 	fmt.Print("    ")
@@ -76,7 +72,6 @@ func GetLevMatrix(source, target string) ([][]int){
 	return a 
 
 }
-
 
 func GetDistance(levMatrix [][]int, source string, target string) (int) {
 	distance := levMatrix[len(source)][len(target)]
